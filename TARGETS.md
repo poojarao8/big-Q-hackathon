@@ -9,9 +9,8 @@ A `target` is a specification of the desired platform and simulator / QPU. It 
 ### Hardware backends
 - CPU only   
 - Single GPU   
-- Multi-GPU 
-- Multi-QPU 
-- Multi-node 
+- Multi-GPU
+- Multi-QPU
 
 ### Targets
 - `default`
@@ -23,16 +22,15 @@ A `target` is a specification of the desired platform and simulator / QPU. It 
         - In C++, `nvq++ --target nvidia ghz_state.cpp -o a.out`
         - In Python, `python3 --target nvidia ghz_state.py`  
 - `nvidia-mqpu` 
-	- custatevec with multi-QPU
+	- custatevec with multi-QPU, realized through GPUs acting as virtul QPUs.
         ```
         $ python --target nvidia-mqpu distribute_hamiltonian.py
         ```
-- `cuquantum_mgpu` 
-	- custatevec with multi-GPU
-        - Not covered in this workshop
+- `nvidia-mgpu` 
+	- Allows for Multi-Node, Multi-GPU distribution of the state vector using  custatevec.
         ```
-        $ nvq++ --target cuquantum-mgpu ghz.py -o a.out
-        $ mpiexec -np 2 ./a.out
+        $ nvq++ --target nvidia-mgpu ghz.py -o a.out
+        $ mpirun -np 2 ./a.out
         ```
 - `density-matrix-cpu` 
 	- CPU-only multithreaded density matrix emulation
@@ -41,7 +39,7 @@ A `target` is a specification of the desired platform and simulator / QPU. It 
 - `ionq` 
 - more!
 
-To print a list of all the targets in Python:
+To print a list of all the targets that are available for you on your machine:
 
 ```
 import cudaq
@@ -52,10 +50,5 @@ for t in targets:
      print(t)
 ```
 
-<img src="target_list.png"
-     alt="Targets"
-     style="float: left; margin-right: 10px;" />
-
-Note: Some of these targets are not available for this workshop. 
 
 
