@@ -30,3 +30,18 @@ ssh -l YourUserName -L 127.0.0.1:PortNumber:NodeName.delta.internal.ncsa.edu:Por
 ```
 You will be prompted to authenticate on Delta again. Finally, paste the entire second URL (right below where you found the node name, starts with `http://127.0.0.1`, 5th line in the snippet above) on your local browser, and you are connected and can use notebooks now!
 
+## Summary of steps
+1. Log into Delta
+```
+ssh -l YourUserName dt-login.delta.ncsa.illinois.edu
+```
+2. Start the container and take note of the chosen port number
+```
+/projects/bcaf/scripts/start_container.sh
+```
+3. Find the node name (it will be `gpua###`)
+4. With the port number and the node name, open another Terminal and tunnel through the login node:
+```
+ssh -l YourUserName -L 127.0.0.1:PortNumber:NodeName.delta.internal.ncsa.edu:PortNumber dt-login.delta.ncsa.illinois.edu
+```
+5. Copy the URL with the node name and the token (`http://127.0.0.1......`) into your local browser
