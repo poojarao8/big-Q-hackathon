@@ -22,11 +22,11 @@ You will be prompted to enter a four-digit code. Choose one that you like (e.g. 
 [I 2023-09-27 15:38:11.068 ServerApp] Skipped non-installed server(s): bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyright, python-language-server, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
 
 ```
-The key information you need now is under the `Or copy and paste one of these URLs:` line. You will need the name of the compute node where the container is running. In this example, the node name is `gpua017`.
+The key information you need is under the `Or copy and paste one of these URLs:` line (4th line in the snippet above). You will need the name of the compute node where the container is running. In this example, the node name is `gpua017`.
 
 With this information in hand, open another Terminal window (don't close the previous one!), and enter the following command, replacing `YouserUserName` with your username, `NodeName` with what you got in the previous step and `PortNumber` with the four-digit code you chose before.
 ```
 ssh -l YourUserName -L 127.0.0.1:PortNumber:NodeName.delta.internal.ncsa.edu:PortNumber dt-login.delta.ncsa.illinois.edu
 ```
-You will be prompted to authenticate on Delta again. Finally, paste the entire second URL (right below where you found the node name, starts with `http://127.0.0.1`) on your local browser, and you are connected and can use notebooks now!
+You will be prompted to authenticate on Delta again. Finally, paste the entire second URL (right below where you found the node name, starts with `http://127.0.0.1`, 5th line in the snippet above) on your local browser, and you are connected and can use notebooks now!
 
