@@ -39,7 +39,8 @@ class QuantumCircuit:
 
         self.kernel.h(qubits)
 
-        kernel.ry(theta[0], qubits)
+        for i in range(n_qubits):
+            self.kernel.ry(self.theta[0], qubits[i])
 
     
     def run(self, thetas):
