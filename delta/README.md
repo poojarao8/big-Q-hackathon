@@ -1,9 +1,9 @@
 # Logging into NCSA Delta
 [Delta](https://www.ncsa.illinois.edu/research/project-highlights/delta/) is NCSA's flagship supercomputer. You should have received information from the NCSA Identity team about your account, password, and multi-factor authentication.
 
-To log into the system, open your Terminal and use the following command, replacing `YourUserName`:
+To log into the system, open your Terminal and use the following command, replacing `YOURUSERNAME`:
 ```
-ssh -l YourUserName dt-login.delta.ncsa.illinois.edu
+ssh -l YOURUSERNAME dt-login.delta.ncsa.illinois.edu
 ```
 and follow the prompt instructions.
 
@@ -29,9 +29,9 @@ You will be prompted to enter a four-digit code. Choose one that you like (e.g. 
 The key information you need is under the `Or copy and paste one of these URLs:` line (4th line in the snippet above). You will need the name of the compute node where the container is running. In this example, the node name is `gpua017`.
 
 ### Tunnel through the login node into the compute node
-With this information in hand, open another Terminal window (don't close the previous one!), and enter the following command, replacing `YouserUserName` with your username, `NodeName` with what you got in the previous step and `PortNumber` with the four-digit code you chose before.
+With this information in hand, open another Terminal window (don't close the previous one!), and enter the following command, replacing `YOURUSERNAME` with your username, `NODENAME` with what you got in the previous step and `PORTNUMBER` with the four-digit code you chose before.
 ```
-ssh -l YourUserName -L 127.0.0.1:PortNumber:NodeName.delta.internal.ncsa.edu:PortNumber dt-login.delta.ncsa.illinois.edu
+ssh -l YOURUSERNAME -L 127.0.0.1:PORTNUMBER:NODENAME.delta.internal.ncsa.edu:PORTNUMBER dt-login.delta.ncsa.illinois.edu
 ```
 You will be prompted to authenticate on Delta again. 
 
@@ -43,7 +43,7 @@ Finally, paste the entire second URL (right below where you found the node name,
 # Summary of steps
 1. Log into Delta
 ```
-ssh -l YourUserName dt-login.delta.ncsa.illinois.edu
+ssh -l YOURUSERNAME dt-login.delta.ncsa.illinois.edu
 ```
 2. Start the container and take note of the chosen port number
 ```
@@ -52,6 +52,6 @@ ssh -l YourUserName dt-login.delta.ncsa.illinois.edu
 3. Find the node name (it will be `gpua###`)
 4. With the port number and the node name, open another Terminal and tunnel through the login node:
 ```
-ssh -l YourUserName -L 127.0.0.1:PortNumber:NodeName.delta.internal.ncsa.edu:PortNumber dt-login.delta.ncsa.illinois.edu
+ssh -l YOURUSERNAME -L 127.0.0.1:PORTNUMBER:NODENAME.delta.internal.ncsa.edu:PORTNUMBER dt-login.delta.ncsa.illinois.edu
 ```
 5. Copy the URL with the node name and the token (`http://127.0.0.1......`) into your local browser
