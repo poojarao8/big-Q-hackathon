@@ -1,8 +1,10 @@
-# ORNL Workshop
+# Big Q Hackathon
 
+## Running CUDA Quantum on Delta.
+Please follow [these instructions](https://github.com/poojarao8/big-Q-hackathon/blob/master/delta/README.md).
 
-## Running CUDA Quantum for non-OLCF systems
-The easiest way to get started with CUDA Quantum is via the public Docker images. These images are available for `x86_64` (or `AMD64`) and `aarch64` CPU architectures. Depending on whether you have an NVIDIA GPU or not, you’ll also want to pull a specific tag for these images. 
+## Running CUDA Quantum on non-Delta systems.
+The easiest way to get started with CUDA Quantum is via the public Docker images. These images are available for `x86_64` (or `AMD64`) and `aarch64` CPU architectures. 
  
 `ghcr.io/nvidia/cuda-quantum:latest`  
  
